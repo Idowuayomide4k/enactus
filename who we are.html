@@ -165,7 +165,7 @@
       font-weight: 500;
     }
 
-     body {
+    body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #ffffff;
         }
@@ -296,7 +296,7 @@
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg ">
+<nav class="navbar navbar-expand-lg fixed-top">
      <!-- fixed-top -->
   <div class="container">
     <a class="navbar-brand" href="#">
@@ -319,7 +319,7 @@
           <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About Us</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="who we are.html">- Who We Are</a></li>
-            <li><a class="dropdown-item nav-link disabled" style="margin-left: 8px;" href="#">- Our Partners</a></li>
+            <li><a class="dropdown-item" href="#">- Our Project</a></li>
             <li><a class="dropdown-item" href="Team.html">- Our Teams</a></li>
             <li><a class="dropdown-item nav-link disabled" style="margin-left: 8px;" href="#">- Our Alumni</a></li>
           </ul>
@@ -531,9 +531,9 @@
       <div class="col-md-3 mb-3">
         <h5 class="text-warning">Contact Us</h5>
         <ul class="list-unstyled">
-          <li><i class="bi bi-geo-alt-fill me-2"></i>123 Enactus Street, Lagos, Nigeria</li>
-          <li><i class="bi bi-envelope-fill me-2"></i>info@enactus.org.ng</li>
-          <li><i class="bi bi-telephone-fill me-2"></i>+234 800 123 4567</li>
+          <li><i class="bi bi-geo-alt-fill me-2"></i>Igbara Odo Road, P.M.B. 250 Ikere-Ekiti.</li>
+          <li><i class="bi bi-envelope-fill me-2"></i>bouestienactus@gmail.com</li>
+          <li><i class="bi bi-telephone-fill me-2"></i>+234 7038 844 280</li>
         </ul>
       </div>
 
@@ -556,9 +556,15 @@
 </footer>
 
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-;
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+   document.getElementById("newsletterForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = this.querySelector("input").value;
 
+    // Simulate sending data (you'll replace this later with real backend)
+    document.getElementById("newsletterMessage").textContent = `Thank you for subscribing, ${email}!`;
+    this.reset();
+  });
+</script>
 </body>
 </html>
